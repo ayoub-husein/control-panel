@@ -162,6 +162,12 @@ module.exports = {
             chunks: ['main']
         }),
 
+        new HtmlWebpackPlugin({
+            template: './src/components/table.html',
+            filename: 'components/table.html',
+            chunks: ['main']
+        }),
+
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 
         new MiniCssExtractPlugin({
