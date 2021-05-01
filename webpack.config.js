@@ -68,6 +68,21 @@ module.exports = {
                 }
                 ]
             },
+        
+
+            {
+                test: /\.(png|svg|jpe?g|gif)$/,
+                exclude: /fonts/,
+                use: [
+                  {
+                    loader: "file-loader", 
+                    options: {
+                      name: '[name].[ext]',
+                      outputPath: "assets/images",
+                    }
+                  }
+                ]
+            },
         ],
     },
 
@@ -101,6 +116,12 @@ module.exports = {
             template: './src/components/banner.html',
             filename: 'components/banner.html',
             chunks: ['main','assets/js/banner']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/components/list.html',
+            filename: 'components/list.html',
+            chunks: ['main']
         }),
 
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
