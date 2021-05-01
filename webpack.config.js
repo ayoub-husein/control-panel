@@ -10,6 +10,7 @@ module.exports = {
         'main': './src/js/index.js',
         'assets/js/banner': './src/assets/js/banner.js',
         'assets/js/tabs': './src/assets/js/tabs.js',
+        'assets/js/upload': './src/assets/js/upload.js',
     },
     output: {
         path: path.join(__dirname, 'build'),
@@ -129,6 +130,17 @@ module.exports = {
             template: './src/components/tabs.html',
             filename: 'components/tabs.html',
             chunks: ['main','assets/js/tabs']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/components/upload.html',
+            filename: 'components/upload.html',
+            chunks: ['main', 'assets/js/upload']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/components/help.html',
+            filename: 'components/help.html',
+            chunks: ['main']
         }),
 
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
