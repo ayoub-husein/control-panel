@@ -3,9 +3,14 @@
 @import "config/colors";
 
 @import "utilities/spacing";
+@import "utilities/mixin-card";
 
 
 @import "base/fonts.scss";
 @import "base/global.scss";
 @import "base/typography.scss";
 @import "base/links.scss";
+
+
+@import "components/demo";
+@import "components/_components";

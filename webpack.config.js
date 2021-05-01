@@ -7,11 +7,12 @@ const { Template } = require('webpack');
 
 module.exports = {
     entry: {
-        'main': './src/js/index.js'
+        'main': './src/js/index.js',
+        'assets/js/banner': './src/assets/js/banner.js',
     },
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'js/main.js',
+        filename: '[name].js',
         publicPath: '/',
     },
 
@@ -31,6 +32,17 @@ module.exports = {
                         loader: 'html-loader',
                     }
                 ]
+            },
+
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: "babel-loader",
+                  options: {
+                    presets: ['@babel/preset-env']
+                  }
+                }
             },
 
             {
@@ -64,6 +76,31 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
+            chunks: ['main']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/components/button.html',
+            filename: 'components/button.html',
+            chunks: ['main']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/components/textfield.html',
+            filename: 'components/textfield.html',
+            chunks: ['main']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/components/card.html',
+            filename: 'components/card.html',
+            chunks: ['main']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/components/banner.html',
+            filename: 'components/banner.html',
+            chunks: ['main','assets/js/banner']
         }),
 
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
