@@ -137,9 +137,16 @@ module.exports = {
             filename: 'components/upload.html',
             chunks: ['main', 'assets/js/upload']
         }),
+
         new HtmlWebpackPlugin({
             template: './src/components/help.html',
             filename: 'components/help.html',
+            chunks: ['main']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/components/summary.html',
+            filename: 'components/summary.html',
             chunks: ['main']
         }),
 
