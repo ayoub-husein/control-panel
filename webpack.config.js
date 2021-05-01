@@ -149,6 +149,12 @@ module.exports = {
             filename: 'components/summary.html',
             chunks: ['main']
         }),
+        
+        new HtmlWebpackPlugin({
+            template: './src/components/actions.html',
+            filename: 'components/actions.html',
+            chunks: ['main']
+        }),
 
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 
