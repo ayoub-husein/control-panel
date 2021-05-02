@@ -99,6 +99,36 @@ module.exports = {
         }),
 
         new HtmlWebpackPlugin({
+            template: './src/add-product.html',
+            filename: 'add-product.html',
+            chunks: ['main', 'assets/js/upload']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/products.html',
+            filename: 'products.html',
+            chunks: ['main']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/users.html',
+            filename: 'users.html',
+            chunks: ['main']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/orders.html',
+            filename: 'orders.html',
+            chunks: ['main']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/add-user.html',
+            filename: 'add-user.html',
+            chunks: ['main', 'assets/js/upload']
+        }),
+
+        new HtmlWebpackPlugin({
             template: './src/components/button.html',
             filename: 'components/button.html',
             chunks: ['main']
@@ -182,28 +212,10 @@ module.exports = {
             chunks: ['main']
         }),
 
-        new HtmlWebpackPlugin({
-            template: './src/add-product.html',
-            filename: 'add-product.html',
-            chunks: ['main', 'assets/js/upload']
-        }),
-
-        new HtmlWebpackPlugin({
-            template: './src/products.html',
-            filename: 'products.html',
-            chunks: ['main']
-        }),
-
-        new HtmlWebpackPlugin({
-            template: './src/users.html',
-            filename: 'users.html',
-            chunks: ['main']
-        }),
-
         new HtmlWebpackPartialsPlugin({
             path: path.join(__dirname, './src/components/sidebar.html'),
             location: 'sidebar',
-            template_filename: ['index.html', 'add-product.html', 'products.html', 'users.html']
+            template_filename: ['index.html', 'add-product.html', 'products.html', 'users.html', 'orders.html', 'users.html', 'add-user.html']
         }),
 
         new HtmlWebpackPartialsPlugin({
@@ -233,7 +245,7 @@ module.exports = {
         new HtmlWebpackPartialsPlugin({
             path: path.join(__dirname, './src/components/help.html'),
             location: 'help',
-            template_filename: ['index.html', 'add-product.html', 'products.html', 'users.html']
+            template_filename: ['index.html', 'add-product.html', 'products.html', 'users.html', 'orders.html', 'users.html', 'add-user.html']
         }),
 
 
