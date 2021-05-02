@@ -176,10 +176,22 @@ module.exports = {
             chunks: ['main', 'assets/js/chart']
         }),
 
+        new HtmlWebpackPlugin({
+            template: './src/components/form.html',
+            filename: 'components/form.html',
+            chunks: ['main']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './src/add-product.html',
+            filename: 'add-product.html',
+            chunks: ['main', 'assets/js/upload']
+        }),
+
         new HtmlWebpackPartialsPlugin({
             path: path.join(__dirname, './src/components/sidebar.html'),
             location: 'sidebar',
-            template_filename: ['index.html']
+            template_filename: ['index.html', 'add-product.html']
         }),
 
         new HtmlWebpackPartialsPlugin({
@@ -209,7 +221,7 @@ module.exports = {
         new HtmlWebpackPartialsPlugin({
             path: path.join(__dirname, './src/components/help.html'),
             location: 'help',
-            template_filename: ['index.html']
+            template_filename: ['index.html', 'add-product.html']
         }),
 
 
