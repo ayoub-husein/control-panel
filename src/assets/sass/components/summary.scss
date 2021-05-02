@@ -4,6 +4,7 @@
     align-items: center;
     padding: spacing("small") spacing("wide");
     flex-wrap: wrap;
+    left: 10px;
 }
 
 .c-summary__data {
@@ -32,3 +33,24 @@
 .c-summary__key {
     font-weight: 600;
 }
+
+.c-summary--boxless {
+    background: none;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.c-summary--small {
+    .c-summary__key, .c-summary__value {
+        font-size: 13px;
+        font-weight: normal;
+    }
+}
+
+.c-summary--spaceless {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
