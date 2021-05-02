@@ -219,12 +219,6 @@ module.exports = {
         }),
 
         new HtmlWebpackPartialsPlugin({
-            path: path.join(__dirname, './src/components/actions.html'),
-            location: 'actions',
-            template_filename: ['index.html']
-        }),
-
-        new HtmlWebpackPartialsPlugin({
             path: path.join(__dirname, './src/components/banner.html'),
             location: 'banner',
             template_filename: ['index.html']

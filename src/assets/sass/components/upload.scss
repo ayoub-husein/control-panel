@@ -105,3 +105,12 @@ $upload-size: 400px;
     }
 }
 
+//responsive
+
+@media (max-width: $upload-size) {
+    .c-upload{
+        min-width: inherit;
+        width: 100%;
+    }
+}
+
